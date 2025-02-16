@@ -1,5 +1,5 @@
 const CreateAccount = () => {
-  return <div>Create-account</div>;
+  return <div>CreateAccount</div>;
 };
 
 export default CreateAccount;
