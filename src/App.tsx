@@ -9,12 +9,17 @@ import reset from "styled-reset";
 import { useEffect, useState } from "react";
 import LoadingScreen from "./components/loading-screen";
 import { auth } from "./firebase";
+import ProtectedRoutes from "./components/protected-routes";
 
 // Router 정의
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <ProtectedRoutes>
+        <Layout />
+      </ProtectedRoutes>
+    ),
     children: [
       {
         path: "",
@@ -31,7 +36,7 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/crate-account",
+    path: "/create-account",
     element: <CreateAccount />,
   },
 ]);
